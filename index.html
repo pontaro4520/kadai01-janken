@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+     <link rel="stylesheet" href="./css/output.css">
+    <title>じゃんけんシミュレータ</title>
+</head>
+
+<body class="bg-green-300">
+
+    <header>
+        <h1 class="flex justify-center text-5xl p-5">じゃんけんシミュレータ</h1>
+    </header>
+
+    <main>
+        <h1 class="flex justify-center text-3xl">じゃんけんの勝率を調査しましょう</h1>
+        <div id="images" class="flex justify-around">
+          <img class="w-20 h-20" src="img/gu.png" alt="ぐー">
+           <img class="w-20 h-20" src="img/cho.png" alt="ちょき">
+           <img class="w-20 h-20" src="img/par.png" alt="ぱー">
+        </div>
+    
+        <span id="btn" class="flex justify-around">
+            
+            <button id="gu_btn" class=" btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                ぐー
+              </button>
+             
+              <button id="cho_btn" class=" btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                ちょき
+              </button>
+              
+              <button id="par_btn" class=" btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                ぱー
+              </button>
+
+        </span>
+        <div class="text-2xl flex justify-center">コンピュータの出した手は？「<span id="pc_hands" class="text-4xl">なに？</span>」</div>
+        <h1 class="text-2xl">結果は・・・<span id="judgement"></span></h1>
+
+        <p class="flex text-xl">
+        <span id="count">0</span>試合中<br>
+        <span id="win_count">0</span>勝<br>
+        <span id="draw_count">0</span>分<br>
+        <span id="lose_count">0</span>敗<br>
+        </p>
+
+        <h1 class="text-2xl">勝率は・・・<span id="rate">0</span>%</h1>
+
+        <form class="text-green-300">
+          <fieldset>
+            <legend>隠しコマンド</legend>
+            <div>
+              <input type="radio" id="timesChoice1" name="times" value="1" checked/>
+              <label for="timesChoice1">1回勝負する</label>
+        
+              <input type="radio" id="timesChoice2" name="times" value="100" />
+              <label for="timesChoice2">100回勝負する</label>
+        
+              <input type="radio" id="timesChoice3" name="times" value="10000" />
+              <label for="timesChoice3">10000回勝負する</label>
+            </div>
+            <div>
+              <button id="times" type="button">設定</button>
+            </div>
+          </fieldset>
+        </form>
+        <pre id="log"></pre>
+     
+
+
+    </main>
+
+    <footer></footer>
+
+    
+    <!-- jqueryの読み込み（記述）が絶対に先！！！ -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- js/test.jsは絶対にjqueryの後 -->
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
