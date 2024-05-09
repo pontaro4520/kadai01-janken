@@ -13,17 +13,21 @@ var win_count = 0;
 var draw_count = 0;
 var lose_count = 0;
 
-// $('#times').click(function () {
-//     var times = $('input[name="times"]:checked').val();
-//     console.log(times);
-// })
+var times = 1;
+
+$('#times').click(function () {
+    times = Number($('input[name="times"]:checked').val());
+    // console.log(times+1);
+})
 
 
 
 // ボタンを押すと
 $("#gu_btn").on("click", function () {
 
-    
+    for (let i = 0; i < times ; i++){
+        console.log(i)
+   
 
     // 試合回数をカウント
     count++;
@@ -63,10 +67,15 @@ $("#gu_btn").on("click", function () {
     console.log(win_rate)
     $("#rate").html(win_rate);
 
+}
+
 })
 
 // ボタンを押すと
 $("#cho_btn").on("click", function () {
+
+    for (let i = 0; i < times ; i++){
+        console.log(i)
 
         // 試合回数をカウント
         count++;
@@ -105,12 +114,17 @@ $("#cho_btn").on("click", function () {
         var win_rate = (win_count / count) * 100;
         console.log(win_rate)
         $("#rate").html(win_rate);
+
+    }
     
 
 })
 
 // ボタンを押すと
 $("#par_btn").on("click", function () {
+
+    for (let i = 0; i < times ; i++){
+        console.log(i)
 
         // 試合回数をカウント
         count++;
@@ -150,7 +164,7 @@ $("#par_btn").on("click", function () {
         console.log(win_rate)
         $("#rate").html(win_rate);
   
-
+    }
 
 
 })
