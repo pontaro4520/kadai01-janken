@@ -5,60 +5,70 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
      <link rel="stylesheet" href="./css/output.css">
-    <title>鋼材重量計算ツール</title>
+    <title>じゃんけんシミュレータ</title>
 </head>
 
-<body class="bg-pink-100">
+<body class="bg-green-300">
 
     <header>
-        <h1 class="flex justify-center text-5xl p-5">鋼材重量計算ツール</h1>
+        <h1 class="flex justify-center text-5xl p-5">じゃんけんシミュレータ</h1>
     </header>
 
     <main>
-        <h1 class="flex justify-center text-3xl">鋼材重量を計算します。</h1>
+        <h1 class="flex justify-center text-3xl">じゃんけんの勝率を調査しましょう</h1>
+        <div id="images" class="flex justify-around">
+          <img class="w-20 h-20" src="img/gu.png" alt="ぐー">
+           <img class="w-20 h-20" src="img/cho.png" alt="ちょき">
+           <img class="w-20 h-20" src="img/par.png" alt="ぱー">
+        </div>
+    
+        <span id="btn" class="flex justify-around">
+            
+            <button id="gu_btn" class=" btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                ぐー
+              </button>
+             
+              <button id="cho_btn" class=" btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                ちょき
+              </button>
+              
+              <button id="par_btn" class=" btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                ぱー
+              </button>
 
-        <h2 class="text-2xl">   
-          <select name="keijou" id="keijou">
-            <option value="0">-</option>
-            <option value="1">平板</option>
-            <option value="2">角パイプ</option>
-            <option value="3">パイプ</option>
-            </select>
-            の重量計算</h2>
-     
+        </span>
+        <div class="text-2xl flex justify-center">コンピュータの出した手は？「<span id="pc_hands" class="text-4xl">なに？</span>」</div>
+        <h1 class="text-2xl">結果は・・・<span id="judgement"></span></h1>
 
-        <form action="">
-          <select name="material" id="mt">
-            <option value="4">-</option>
-            <option value="5">鉄</option>
-            <option value="6">ステンレス</option>
-            <option value="7">アルミ</option>
-                      
-          </select>
-          <br>
-          板厚
-          <input type="text" name="T" size="9" id="t" class="m-2">
-          mm
-          <br>
-          縦(A)
-          <input type="text" name="X" size="9" id="x" class="m-2">
-          mm
-          <br>
-          横(B)
-          <input type="text" name="Y" size="9" id="y" class="m-2">
-          mm
-          <br>
-          <div class="border-t-4 border-indigo-500"></div>
-          
-          重量
-          <input type="text" name="Z" size="9" id="z" class="m-2">
-          kg
-          <br>
-          <input type="button" value="計算" id="result" class="bg-indigo-500 hover:bg-indigo-700 font-hira text-white py-2 px-4 rounded " >
-          <input type="reset" value="やりなおし" id="reset" class="bg-indigo-500 hover:bg-indigo-700 font-hira text-white py-2 px-4 rounded ">
-          <input type="button" value="保存" id="save" class="bg-indigo-500 hover:bg-indigo-700 font-hira text-white py-2 px-4 rounded ">
+        <p class="flex text-xl">
+        <span id="count">0</span>試合中<br>
+        <span id="win_count">0</span>勝<br>
+        <span id="draw_count">0</span>分<br>
+        <span id="lose_count">0</span>敗<br>
+        </p>
+
+        <h1 class="text-2xl">勝率は・・・<span id="rate">0</span>%</h1>
+
+        <form class="text-green-300">
+          <fieldset>
+            <legend>隠しコマンド</legend>
+            <div>
+              <input type="radio" id="timesChoice1" name="times" value= 1 checked/>
+              <label for="timesChoice1">1回勝負する</label>
+        
+              <input type="radio" id="timesChoice2" name="times" value= 100 />
+              <label for="timesChoice2">100回勝負する</label>
+        
+              <input type="radio" id="timesChoice3" name="times" value= 10000 />
+              <label for="timesChoice3">10000回勝負する</label>
+            </div>
+            <div>
+              <button id="times" type="button">設定</button>
+            </div>
+          </fieldset>
         </form>
-         
+        <pre id="log"></pre>
+     
 
 
     </main>
